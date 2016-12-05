@@ -1,0 +1,425 @@
+Analysis & Synthesis report for PS2_Demo
+Mon Dec 05 18:42:09 2016
+Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |PS2_Demo|PS2_Controller:PS2|s_ps2_transceiver
+  9. State Machine - |PS2_Demo|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: PS2_Controller:PS2
+ 15. Port Connectivity Checks: "PS2_Controller:PS2"
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 05 18:42:09 2016    ;
+; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
+; Revision Name                      ; PS2_Demo                                 ;
+; Top-level Entity Name              ; PS2_Demo                                 ;
+; Family                             ; Cyclone IV E                             ;
+; Total logic elements               ; 117                                      ;
+;     Total combinational functions  ; 94                                       ;
+;     Dedicated logic registers      ; 46                                       ;
+; Total registers                    ; 46                                       ;
+; Total pins                         ; 93                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; PS2_Demo           ; PS2_Demo           ;
+; Family name                                                                ; Cyclone IV E       ; Stratix            ;
+; Verilog Show LMF Mapping Messages                                          ; Off                ;                    ;
+; Verilog Version                                                            ; SystemVerilog_2005 ; Verilog_2001       ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                        ; 1                  ; 1                  ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+
+; PS2_Controller.v                 ; yes             ; User Verilog HDL File  ; C:/FYP2/Practical/Projects/PS2_Demo_ori/PS2_Controller.v               ;
+; Altera_UP_PS2_Data_In.v          ; yes             ; User Verilog HDL File  ; C:/FYP2/Practical/Projects/PS2_Demo_ori/Altera_UP_PS2_Data_In.v        ;
+; PS2_Demo.v                       ; yes             ; User Verilog HDL File  ; C:/FYP2/Practical/Projects/PS2_Demo_ori/PS2_Demo.v                     ;
+; Hexadecimal_To_Seven_Segment.v   ; yes             ; User Verilog HDL File  ; C:/FYP2/Practical/Projects/PS2_Demo_ori/Hexadecimal_To_Seven_Segment.v ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 117            ;
+;                                             ;                ;
+; Total combinational functions               ; 94             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 63             ;
+;     -- 3 input functions                    ; 12             ;
+;     -- <=2 input functions                  ; 19             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 94             ;
+;     -- arithmetic mode                      ; 0              ;
+;                                             ;                ;
+; Total registers                             ; 46             ;
+;     -- Dedicated logic registers            ; 46             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 93             ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 46             ;
+; Total fan-out                               ; 638            ;
+; Average fan-out                             ; 1.95           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
++--------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
++--------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+; |PS2_Demo                                  ; 94 (17)           ; 46 (16)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 93   ; 0            ; |PS2_Demo                                                      ; work         ;
+;    |Hexadecimal_To_Seven_Segment:Segment0| ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|Hexadecimal_To_Seven_Segment:Segment0                ; work         ;
+;    |Hexadecimal_To_Seven_Segment:Segment1| ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|Hexadecimal_To_Seven_Segment:Segment1                ; work         ;
+;    |Hexadecimal_To_Seven_Segment:Segment2| ; 8 (8)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|Hexadecimal_To_Seven_Segment:Segment2                ; work         ;
+;    |Hexadecimal_To_Seven_Segment:Segment3| ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|Hexadecimal_To_Seven_Segment:Segment3                ; work         ;
+;    |Hexadecimal_To_Seven_Segment:Segment4| ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|Hexadecimal_To_Seven_Segment:Segment4                ; work         ;
+;    |Hexadecimal_To_Seven_Segment:Segment5| ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|Hexadecimal_To_Seven_Segment:Segment5                ; work         ;
+;    |PS2_Controller:PS2|                    ; 34 (7)            ; 30 (5)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|PS2_Controller:PS2                                   ; work         ;
+;       |Altera_UP_PS2_Data_In:PS2_Data_In|  ; 27 (27)           ; 25 (25)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |PS2_Demo|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In ; work         ;
++--------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |PS2_Demo|PS2_Controller:PS2|s_ps2_transceiver                                                                                                                                                                                               ;
++--------------------------------------------+--------------------------------------------+-------------------------------------------+---------------------------------------+------------------------------------+-------------------------------------------+
+; Name                                       ; s_ps2_transceiver.PS2_STATE_3_END_TRANSFER ; s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT ; s_ps2_transceiver.PS2_STATE_1_DATA_IN ; s_ps2_transceiver.PS2_STATE_0_IDLE ; s_ps2_transceiver.PS2_STATE_4_END_DELAYED ;
++--------------------------------------------+--------------------------------------------+-------------------------------------------+---------------------------------------+------------------------------------+-------------------------------------------+
+; s_ps2_transceiver.PS2_STATE_0_IDLE         ; 0                                          ; 0                                         ; 0                                     ; 0                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_1_DATA_IN      ; 0                                          ; 0                                         ; 1                                     ; 1                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT  ; 0                                          ; 1                                         ; 0                                     ; 1                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_3_END_TRANSFER ; 1                                          ; 0                                         ; 0                                     ; 1                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_4_END_DELAYED  ; 0                                          ; 0                                         ; 0                                     ; 1                                  ; 1                                         ;
++--------------------------------------------+--------------------------------------------+-------------------------------------------+---------------------------------------+------------------------------------+-------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |PS2_Demo|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver                                                                                                                                          ;
++------------------------------------------+--------------------------------------+------------------------------------+------------------------------------------+---------------------------------+------------------------------------+
+; Name                                     ; s_ps2_receiver.PS2_STATE_3_PARITY_IN ; s_ps2_receiver.PS2_STATE_2_DATA_IN ; s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA ; s_ps2_receiver.PS2_STATE_0_IDLE ; s_ps2_receiver.PS2_STATE_4_STOP_IN ;
++------------------------------------------+--------------------------------------+------------------------------------+------------------------------------------+---------------------------------+------------------------------------+
+; s_ps2_receiver.PS2_STATE_0_IDLE          ; 0                                    ; 0                                  ; 0                                        ; 0                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA ; 0                                    ; 0                                  ; 1                                        ; 1                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_2_DATA_IN       ; 0                                    ; 1                                  ; 0                                        ; 1                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_3_PARITY_IN     ; 1                                    ; 0                                  ; 0                                        ; 1                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_4_STOP_IN       ; 0                                    ; 0                                  ; 0                                        ; 1                               ; 1                                  ;
++------------------------------------------+--------------------------------------+------------------------------------+------------------------------------------+---------------------------------+------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; display_code[1]                                    ; LEDG                ; yes                    ;
+; display_code[0]                                    ; LEDG                ; yes                    ;
+; display_code[3]                                    ; LEDG                ; yes                    ;
+; display_code[2]                                    ; LEDG                ; yes                    ;
+; display_code[4]                                    ; LEDG                ; yes                    ;
+; display_code[5]                                    ; LEDG                ; yes                    ;
+; display_code[6]                                    ; LEDG                ; yes                    ;
+; display_code[7]                                    ; LEDG                ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                     ;
++-----------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                 ; Reason for Removal                     ;
++-----------------------------------------------------------------------------------------------+----------------------------------------+
+; PS2_Controller:PS2|idle_counter[0..7]                                                         ; Lost fanout                            ;
+; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_3_END_TRANSFER                                 ; Lost fanout                            ;
+; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA ; Lost fanout                            ;
+; PS2_Controller:PS2|s_ps2_transceiver~2                                                        ; Lost fanout                            ;
+; PS2_Controller:PS2|s_ps2_transceiver~3                                                        ; Lost fanout                            ;
+; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~2                         ; Lost fanout                            ;
+; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~3                         ; Lost fanout                            ;
+; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_4_END_DELAYED                                  ; Stuck at GND due to stuck port data_in ;
+; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT                                  ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 16                                                        ;                                        ;
++-----------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 46    ;
+; Number of registers using Synchronous Clear  ; 5     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PS2_Demo|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PS2_Demo|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PS2_Demo|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Controller:PS2 ;
++------------------+-------+--------------------------------------+
+; Parameter Name   ; Value ; Type                                 ;
++------------------+-------+--------------------------------------+
+; INITIALIZE_MOUSE ; 0     ; Signed Integer                       ;
++------------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PS2_Controller:PS2"                                                                                                                                                   ;
++-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                          ; Type   ; Severity ; Details                                                                                                                                      ;
++-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; the_command                   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; send_command                  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; command_was_sent              ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; error_communication_timed_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 10.0 Build 218 06/27/2010 SJ Web Edition
+    Info: Processing started: Mon Dec 05 18:42:07 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PS2_Demo -c PS2_Demo
+Info: Found 1 design units, including 1 entities, in source file ps2_controller.v
+    Info: Found entity 1: PS2_Controller
+Info: Found 1 design units, including 1 entities, in source file altera_up_ps2_data_in.v
+    Info: Found entity 1: Altera_UP_PS2_Data_In
+Info: Found 1 design units, including 1 entities, in source file ps2_demo.v
+    Info: Found entity 1: PS2_Demo
+Info: Found 1 design units, including 1 entities, in source file hexadecimal_to_seven_segment.v
+    Info: Found entity 1: Hexadecimal_To_Seven_Segment
+Warning (10236): Verilog HDL Implicit Net warning at PS2_Demo.v(123): created implicit net for "HEX6"
+Warning (10236): Verilog HDL Implicit Net warning at PS2_Demo.v(124): created implicit net for "HEX7"
+Info: Elaborating entity "PS2_Demo" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at PS2_Demo.v(123): object "HEX6" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at PS2_Demo.v(124): object "HEX7" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at PS2_Demo.v(98): truncated value with size 32 to match size of target (1)
+Warning (10235): Verilog HDL Always Construct warning at PS2_Demo.v(102): variable "new_keycode" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at PS2_Demo.v(103): variable "last_data_received" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at PS2_Demo.v(100): inferring latch(es) for variable "display_code", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at PS2_Demo.v(123): truncated value with size 7 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at PS2_Demo.v(124): truncated value with size 7 to match size of target (1)
+Info (10041): Inferred latch for "display_code[0]" at PS2_Demo.v(111)
+Info (10041): Inferred latch for "display_code[1]" at PS2_Demo.v(111)
+Info (10041): Inferred latch for "display_code[2]" at PS2_Demo.v(111)
+Info (10041): Inferred latch for "display_code[3]" at PS2_Demo.v(111)
+Info (10041): Inferred latch for "display_code[4]" at PS2_Demo.v(111)
+Info (10041): Inferred latch for "display_code[5]" at PS2_Demo.v(111)
+Info (10041): Inferred latch for "display_code[6]" at PS2_Demo.v(111)
+Info (10041): Inferred latch for "display_code[7]" at PS2_Demo.v(111)
+Info: Elaborating entity "PS2_Controller" for hierarchy "PS2_Controller:PS2"
+Warning (10030): Net "command_was_sent" at PS2_Controller.v(49) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "error_communication_timed_out" at PS2_Controller.v(50) has no driver or initial value, using a default initial value '0'
+Info: Elaborating entity "Altera_UP_PS2_Data_In" for hierarchy "PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In"
+Info: Elaborating entity "Hexadecimal_To_Seven_Segment" for hierarchy "Hexadecimal_To_Seven_Segment:Segment0"
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: The following bidir pins have no drivers
+    Warning: Bidir "PS2_CLK" has no driver
+    Warning: Bidir "PS2_DAT" has no driver
+Warning: Latch display_code[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[1]
+Warning: Latch display_code[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[0]
+Warning: Latch display_code[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[3]
+Warning: Latch display_code[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[2]
+Warning: Latch display_code[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[4]
+Warning: Latch display_code[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[5]
+Warning: Latch display_code[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[6]
+Warning: Latch display_code[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal last_data_received[7]
+Info: Timing-Driven Synthesis is running
+Info: 14 registers lost all their fanouts during netlist optimizations. The first 14 are displayed below.
+    Info: Register "PS2_Controller:PS2|idle_counter[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|idle_counter[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|idle_counter[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|idle_counter[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|idle_counter[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|idle_counter[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|idle_counter[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|idle_counter[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_3_END_TRANSFER" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|s_ps2_transceiver~2" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|s_ps2_transceiver~3" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~2" lost all its fanouts during netlist optimizations.
+    Info: Register "PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~3" lost all its fanouts during netlist optimizations.
+Warning: Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+Info: Implemented 217 device resources after synthesis - the final resource count might be different
+    Info: Implemented 23 input pins
+    Info: Implemented 68 output pins
+    Info: Implemented 2 bidirectional pins
+    Info: Implemented 124 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 279 megabytes
+    Info: Processing ended: Mon Dec 05 18:42:09 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
